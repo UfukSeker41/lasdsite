@@ -167,6 +167,7 @@
   /* Galeri: 2 sütun */
   .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 3px !important; }
   .gallery-categories { grid-template-columns: repeat(2, 1fr) !important; gap: 2px !important; }
+  .gallery-videos { grid-template-columns: 1fr !important; }
 
   /* Birimler */
   .units-grid { grid-template-columns: repeat(2, 1fr) !important; }
@@ -199,6 +200,7 @@
   /* Galeri: 2 kolon (küçükte de 2 yeterli) */
   .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .gallery-categories { grid-template-columns: 1fr !important; }
+  .gallery-videos { grid-template-columns: 1fr !important; }
 
   /* Birimler: tek sütun */
   .units-grid { grid-template-columns: 1fr !important; }

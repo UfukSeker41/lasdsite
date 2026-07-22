@@ -607,6 +607,42 @@
     .gallery-cat h4 { font-family: 'Oswald', sans-serif; font-size: 14px; color: #2b3621; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
     .gallery-cat p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
 
+    .gallery-videos-wrap { margin-top: 48px; }
+    .gallery-videos-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 20px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .gallery-videos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .video-item {
+      background: var(--navy-card);
+      padding: 10px;
+      border-bottom: 3px solid transparent;
+      transition: border-color .2s;
+    }
+    .video-item:hover { border-bottom-color: var(--gold); }
+    .video-embed {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      overflow: hidden;
+      background: #000;
+    }
+    .video-embed iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
     /* ============================================================
        UNITS
     ============================================================ */
