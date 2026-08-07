@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayın Personeli & Rozet Sistemi – LASD 28th Station</title>
+  <meta name="description" content="Los Angeles County Sheriff's Department 28th Station – Ayın Personeli ödülü ve rozet/başarı sistemi." />
+  <link rel="icon" type="image/png" href="resimler/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dosyalar/style.css" />
+  <link rel="stylesheet" href="dosyalar/responsive.css" />
+  <style>
+    .unit-detail-header {
+      background: linear-gradient(135deg, #1a2210 0%, #2b3621 50%, #354920 100%);
+      border-bottom: 3px solid var(--gold);
+      padding: 64px 24px 52px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .unit-detail-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(224,145,0,.06) 0%, transparent 70%);
+    }
+    .unit-detail-inner { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+    .unit-detail-logo {
+      height: 100px;
+      width: 100px;
+      margin: 0 auto 20px;
+      background: rgba(224,145,0,.1);
+      border: 2px solid rgba(224,145,0,.25);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-size: 44px;
+    }
+    .unit-detail-division { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 12px; }
+    .unit-detail-header h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 14px;
+    }
+    .unit-detail-header h1 span { color: var(--gold); }
+    .unit-detail-desc { font-size: 15px; color: #a8c490; max-width: 560px; margin: 0 auto; line-height: 1.8; }
+    .unit-detail-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 16px;
+      padding: 8px 16px;
+      background: rgba(255,255,255,.1);
+      border-radius: 4px;
+      color: #27ae60;
+    }
+    .unit-detail-status::before { content: ''; width: 8px; height: 8px; border-radius: 50%; display: inline-block; box-shadow: 0 0 6px currentColor; background: #27ae60; }
+
+    .unit-content { padding: 72px 24px; background: #ffffff; }
+    .unit-content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 48px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .unit-section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid var(--gold);
+      display: inline-block;
+    }
+
+    .unit-details-text {
+      color: #2b3621;
+      font-size: 15px;
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    .sidebar-section {
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-border);
+      border-radius: 6px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .sidebar-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .sidebar-item {
+      padding: 8px 0;
+      color: #2b3621;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .sidebar-item strong { color: var(--navy); }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+      transition: gap .2s;
+    }
+
+    .back-btn:hover { gap: 12px; }
+
+    /* SPOTLIGHT — Ayın Personeli */
+    .spotlight-grid { display: grid; grid-template-columns: 260px 1fr; gap: 32px; margin-bottom: 56px; }
+    .spotlight-card {
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-border);
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+    .spotlight-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    }
+    .spotlight-photo { width: 100%; height: 260px; object-fit: cover; object-position: center top; display: block; }
+    .spotlight-info { padding: 20px; }
+    .spotlight-rank { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 6px; }
+    .spotlight-name { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700; color: var(--navy); text-transform: uppercase; margin-bottom: 10px; }
+    .spotlight-meta-item { font-size: 13px; color: var(--text-muted); margin-bottom: 4px; }
+    .spotlight-quote {
+      font-size: 16px;
+      font-style: italic;
+      color: var(--navy);
+      border-left: 3px solid var(--gold);
+      padding: 14px 20px;
+      margin-bottom: 18px;
+      background: var(--navy-mid);
+      border-radius: 0 6px 6px 0;
+    }
+    .spotlight-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .spotlight-tag {
+      background: rgba(224,145,0,.12);
+      color: var(--navy);
+      border: 1px solid rgba(224,145,0,.35);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 20px;
+    }
+
+    /* BADGE / ACHIEVEMENT GRID */
+    .badge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      margin-bottom: 56px;
+    }
+    .badge-card {
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-border);
+      border-radius: 6px;
+      padding: 24px 20px;
+      transition: border-color .2s, transform .2s;
+    }
+    .badge-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .badge-icon { font-size: 30px; margin-bottom: 12px; display: block; }
+    .badge-card h4 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 8px;
+    }
+    .badge-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 10px; }
+    .badge-criteria {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* GEÇMİŞ AYIN PERSONELLERİ */
+    .history-list { display: flex; flex-direction: column; gap: 2px; }
+    .history-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 18px;
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-border);
+      border-radius: 4px;
+      flex-wrap: wrap;
+    }
+    .history-item .h-month { font-size: 12px; color: var(--text-muted); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; min-width: 130px; }
+    .history-item .h-name { font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 700; color: var(--navy); flex: 1; }
+    .history-item .h-note { font-size: 12px; color: var(--text-muted); }
+
+    @media (max-width: 768px) {
+      .unit-content-grid { grid-template-columns: 1fr; }
+      .spotlight-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">İçeriğe geç</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Ana navigasyon">
+    <div class="navbar-inner">
+      <div class="navbar-brand">
+        <a href="index.html" aria-label="LASD Ana Sayfa">
+          <img src="resimler/logo.png" alt="Los Angeles County Sheriff's Department logosu" class="logo-img" onerror="this.style.display='none'">
+        </a>
+        <div class="brand-text">
+          <div class="dept">Los Angeles 28th Compton Station</div>
+          <div class="station">Ayın Personeli & Rozet Sistemi</div>
+        </div>
+      </div>
+      <button class="hamburger" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-menu" role="menubar">
+        <a href="index.html" role="menuitem">Ana Sayfa</a>
+        <a href="index.html#units" role="menuitem">Birimler</a>
+        <a href="ekip.html" role="menuitem">Ekip Kadrosu</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <main id="main-content">
+  <div class="unit-detail-header">
+    <div class="unit-detail-inner">
+      <div class="unit-detail-logo">🏅</div>
+      <div class="unit-detail-division">Personel Takdir Programı</div>
+      <h1>Ayın <span>Personeli</span> & Rozet Sistemi</h1>
+      <p class="unit-detail-desc">İstasyonumuzda gösterilen üstün performansı, disiplini ve topluma hizmet azmini takdir etmek amacıyla her ay bir personel öne çıkarılır ve kazanılan başarılar rozetlerle ödüllendirilir.</p>
+      <div class="unit-detail-status">
+        <span>Aktif Program</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stripe-divider"></div>
+
+  <!-- CONTENT -->
+  <div class="unit-content">
+    <div class="unit-content-grid">
+
+      <!-- MAIN CONTENT -->
+      <div>
+        <a href="index.html" class="back-btn">← Ana Sayfaya Dön</a>
+
+        <h2 class="unit-section-title">Bu Ayın Personeli</h2>
+        <div class="spotlight-grid">
+          <div class="spotlight-card">
+            <img src="resimler/ekipfotolar/mariamarkov.png" alt="Maria M. Markov" class="spotlight-photo" onerror="this.parentElement.innerHTML='<div style=\'height:260px;display:flex;align-items:center;justify-content:center;font-size:48px;background:#2e3e1e\'>👮‍♀️</div>'">
+            <div class="spotlight-info">
+              <div class="spotlight-rank">Deputy Sheriff Master FTO</div>
+              <div class="spotlight-name">Maria M. Markov</div>
+              <div class="spotlight-meta-item">🎖️ Rozet No: 28595</div>
+              <div class="spotlight-meta-item">📍 Birim: Central Patrol Division</div>
+            </div>
+          </div>
+          <div>
+            <p class="spotlight-quote">"Bir kadının olduğu ortam düzenli oluyor ve ilerliyor — emeğiyle bize bunu gösterdi."</p>
+            <p class="unit-details-text">
+              Maria M. Markov, departmanın ilk kadın Master FTO'su olarak eğitim sürecine kattığı disiplin ve özveriyle bu ayın personeli seçilmiştir. Yeni personelin yetişmesinde gösterdiği sabır ve saha performansındaki istikrar, kendisini istasyonumuzda örnek bir isim haline getirmiştir.
+            </p>
+            <div class="spotlight-tags">
+              <span class="spotlight-tag">Liderlik</span>
+              <span class="spotlight-tag">Eğitim Katkısı</span>
+              <span class="spotlight-tag">İstikrar</span>
+              <span class="spotlight-tag">Örnek Davranış</span>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="unit-section-title">Rozet / Başarı Sistemi</h2>
+        <p class="unit-details-text">Personelimiz, sergilediği performans ve hizmet süresine göre aşağıdaki rozetleri kazanabilir:</p>
+        <div class="badge-grid">
+          <div class="badge-card">
+            <span class="badge-icon">🏅</span>
+            <h4>Ayın Personeli</h4>
+            <p>Aylık değerlendirmede en üstün performansı gösteren personele verilir.</p>
+            <div class="badge-criteria">Aylık • Komuta Onayı</div>
+          </div>
+          <div class="badge-card">
+            <span class="badge-icon">🎯</span>
+            <h4>Mükemmel Nişancı</h4>
+            <p>Atış eğitimlerinde üst üste yüksek isabet oranı yakalayan personele verilir.</p>
+            <div class="badge-criteria">Eğitim Başarısı</div>
+          </div>
+          <div class="badge-card">
+            <span class="badge-icon">🛡️</span>
+            <h4>Sıfır Şikayet</h4>
+            <p>6 ay boyunca hiçbir disiplin kaydı veya şikayet almayan personele verilir.</p>
+            <div class="badge-criteria">6 Ay Kesintisiz</div>
+          </div>
+          <div class="badge-card">
+            <span class="badge-icon">📚</span>
+            <h4>Eğitim Onbaşısı</h4>
+            <p>FTO sürecine katkı sağlayan ve yeni personel yetiştiren isimlere verilir.</p>
+            <div class="badge-criteria">FTO Katkısı</div>
+          </div>
+          <div class="badge-card">
+            <span class="badge-icon">⏱️</span>
+            <h4>Uzun Soluklu Hizmet</h4>
+            <p>Kesintisiz hizmet süresine göre 6/12/24 aylık kıdem rozetleri kazanılır.</p>
+            <div class="badge-criteria">Kıdem Bazlı</div>
+          </div>
+          <div class="badge-card">
+            <span class="badge-icon">🚨</span>
+            <h4>Hızlı Müdahale</h4>
+            <p>Olay yerine müdahale süresinde ve saha performansında üstünlük gösterenlere verilir.</p>
+            <div class="badge-criteria">Saha Performansı</div>
+          </div>
+          <div class="badge-card">
+            <span class="badge-icon">🤝</span>
+            <h4>Toplum Elçisi</h4>
+            <p>Toplum destek etkinliklerine düzenli katkı sağlayan personele verilir.</p>
+            <div class="badge-criteria">Toplum Katılımı</div>
+          </div>
+          <div class="badge-card">
+            <span class="badge-icon">⭐</span>
+            <h4>Liderlik Onuru</h4>
+            <p>Terfi süreçlerinde ve komuta görevlerinde üstün başarı gösterenlere verilir.</p>
+            <div class="badge-criteria">Terfi / Komuta</div>
+          </div>
+        </div>
+
+        <h2 class="unit-section-title">Geçmiş Ayın Personelleri</h2>
+        <div class="history-list">
+          <div class="history-item">
+            <span class="h-month">Mayıs 2026</span>
+            <span class="h-name">Maria M. Markov</span>
+            <span class="h-note">İlk kadın Master FTO</span>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Program Bilgileri</div>
+          <div class="sidebar-item"><strong>Değerlendirme:</strong> Aylık</div>
+          <div class="sidebar-item"><strong>Karar Mercii:</strong> Komuta Kadrosu</div>
+          <div class="sidebar-item"><strong>Duyuru:</strong> Ana Sayfa – Duyurular</div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Nasıl Kazanılır?</div>
+          <ul style="margin-left: 16px; color: #2b3621;">
+            <li style="margin-bottom: 8px;">Sahada disiplinli ve örnek performans</li>
+            <li style="margin-bottom: 8px;">Eğitim ve FTO süreçlerine katkı</li>
+            <li style="margin-bottom: 8px;">Şikayetsiz, istikrarlı hizmet</li>
+            <li>Toplum destek etkinliklerine katılım</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">İletişim</div>
+          <div class="sidebar-item">
+            <strong>E-Posta:</strong><br>
+            <a href="mailto:command@lasd.org" style="color: var(--gold);">command@lasd.org</a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-bottom" style="padding: 24px 24px; text-align: center; color: #607848;">
+      <p>© 2026 Los Angeles County Sheriff's Department. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  </main>
+
+  <script>
+    /* Hamburger toggle */
+    document.addEventListener('DOMContentLoaded', function () {
+      var btn = document.querySelector('.hamburger');
+      var menu = document.getElementById('nav-menu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function () {
+        var open = menu.classList.toggle('nav-open');
+        btn.setAttribute('aria-expanded', open);
+      });
+      document.addEventListener('click', function (e) {
+        if (!btn.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.remove('nav-open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          menu.classList.remove('nav-open');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
