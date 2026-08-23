@@ -44,9 +44,16 @@
         <a href="#command" role="menuitem">Komuta</a>
         <a href="#gallery" role="menuitem">Ekipten Fotoğraflar</a>
         <a href="#units" role="menuitem">Birimler</a>
-        <a href="#announcements" role="menuitem">Duyurular</a>
         <a href="ekip.html" class="nav-cta" role="menuitem">Ekip Kadrosu</a>
-        <a href="basvuru.html" class="nav-apply" role="menuitem" aria-label="Başvuru Formu">Başvuru Formu</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle nav-apply" type="button" aria-expanded="false" aria-haspopup="true">Başvuru Formları <span aria-hidden="true">▾</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="basvuru.html" role="menuitem">Başvuru Formu</a>
+            <a href="ridealong.html" role="menuitem">Ride Along</a>
+            <a href="sikayet.html" role="menuitem">Şikayet Formu</a>
+            <a href="Ovgu.html" role="menuitem">Övgü Formu</a>
+          </div>
+        </div>
         <div class="nav-social" aria-label="Sosyal medya bağlantıları">
           <a href="https://www.youtube.com/@LACSD-NOVARP" target="_blank" rel="noopener noreferrer" class="yt" aria-label="YouTube kanalımız">
             <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
@@ -528,6 +535,19 @@
           btn.setAttribute('aria-expanded', 'false');
         });
       });
+      var dropdown = document.querySelector('.nav-dropdown');
+      var dropdownToggle = document.querySelector('.nav-dropdown-toggle');
+      if (dropdown && dropdownToggle) {
+        dropdownToggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var open = dropdown.classList.toggle('is-open');
+          dropdownToggle.setAttribute('aria-expanded', open);
+        });
+        document.addEventListener('click', function () {
+          dropdown.classList.remove('is-open');
+          dropdownToggle.setAttribute('aria-expanded', 'false');
+        });
+      }
       document.querySelectorAll('.unit-card').forEach(function (card) {
         var title = card.querySelector('h3');
         if (title && (title.textContent.includes('CIT - Crime Impact Team') || title.textContent.includes('K-9 Unit'))) {

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ride Along – LASD 28th Station</title>
+  <meta name="description" content="Los Angeles County Sheriff's Department 28th Station Ride Along başvuru formu." />
+  <link rel="icon" type="image/png" href="resimler/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dosyalar/style.css" />
+  <link rel="stylesheet" href="dosyalar/responsive.css" />
+  <style>
+    .basvuru-hero {
+      background: linear-gradient(135deg, #1a2210 0%, #2b3621 50%, #354920 100%);
+      border-bottom: 3px solid var(--gold);
+      padding: 80px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .basvuru-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(224,145,0,.06) 0%, transparent 70%);
+    }
+    .basvuru-hero-inner { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+    .basvuru-hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+    }
+    .basvuru-hero h1 span { color: var(--gold); }
+    .basvuru-hero p { font-size: 16px; color: #a8c490; line-height: 1.8; }
+    .basvuru-status {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #27ae60;
+      color: white;
+      font-weight: 700;
+      border-radius: 4px;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .basvuru-content { padding: 80px 24px; background: #ffffff; }
+    .basvuru-container { max-width: 1300px; margin: 0 auto; }
+
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+      padding-bottom: 16px;
+      border-bottom: 4px solid var(--gold);
+      display: inline-block;
+    }
+
+    .section-subtitle { font-size: 15px; color: var(--text-muted); margin-bottom: 40px; }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+
+    .process-card {
+      background: var(--navy-mid);
+      border: 2px solid var(--navy-border);
+      border-radius: 8px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .process-card:hover {
+      border-color: var(--gold);
+      background: #ffffff;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,.1);
+    }
+
+    .process-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+      font-family: 'Oswald', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+    }
+
+    .process-card h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    .process-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .requirements-section {
+      background: var(--navy-mid);
+      border-left: 4px solid var(--gold);
+      padding: 32px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+
+    .requirements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .requirement-item {
+      background: var(--navy-card);
+      padding: 20px;
+      border-radius: 6px;
+      border: 1px solid var(--navy-border);
+      transition: all 0.2s ease;
+    }
+
+    .requirement-item:hover {
+      border-color: var(--gold);
+      background: #ffffff;
+    }
+
+    .requirement-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .requirement-item h4 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .requirement-item p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .form-section {
+      background: var(--navy-mid);
+      padding: 40px;
+      border-radius: 8px;
+      border: 2px solid var(--navy-border);
+    }
+
+    .form-section h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    .form-section .subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .form-disclaimer {
+      background: rgba(224, 145, 0, 0.1);
+      border-left: 4px solid var(--gold);
+      padding: 16px;
+      border-radius: 4px;
+      margin-bottom: 24px;
+      font-size: 13px;
+      color: #2b3621;
+    }
+
+    .form-frame {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      min-height: 800px;
+    }
+
+    .form-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      min-height: 800px;
+    }
+
+    .apply-button {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 14px 36px;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .apply-button:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(224, 145, 0, 0.3);
+    }
+
+    .contact-info {
+      background: var(--navy-card);
+      border: 2px solid var(--navy-border);
+      padding: 24px;
+      border-radius: 8px;
+      margin-top: 40px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .contact-item h4 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .contact-item p {
+      font-size: 14px;
+      color: #2b3621;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .requirements-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .basvuru-hero { padding: 60px 24px 40px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">İçeriğe geç</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Ana navigasyon">
+    <div class="navbar-inner">
+      <div class="navbar-brand">
+        <a href="index.html" aria-label="LASD Ana Sayfa">
+          <img src="resimler/logo.png" alt="Los Angeles County Sheriff's Department logosu" class="logo-img" onerror="this.style.display='none'">
+        </a>
+        <div class="brand-text">
+          <div class="dept">Los Angeles 28th Compton Station</div>
+          <div class="station">Ride Along Programı</div>
+        </div>
+      </div>
+      <button class="hamburger" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-menu" role="menubar">
+        <a href="index.html" role="menuitem">Ana Sayfa</a>
+        <a href="index.html#units" role="menuitem">Birimler</a>
+        <a href="ekip.html" role="menuitem">Ekip Kadrosu</a>
+        <a href="ridealong.html" class="active nav-cta" role="menuitem" aria-current="page">Ride Along</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <main id="main-content">
+  <section class="basvuru-hero">
+    <div class="basvuru-hero-inner">
+      <h1>Ride <span>Along</span></h1>
+      <p>LASD 28th Station ekiplerini sahada gözlemlemek, görev düzenimizi tanımak ve kolluk çalışmalarını yakından deneyimlemek için Ride Along programımıza başvurun.</p>
+      <div class="basvuru-status">✓ RIDE ALONG BAŞVURULARI AÇIK</div>
+    </div>
+  </section>
+
+  <div class="stripe-divider"></div>
+
+  <!-- MAIN CONTENT -->
+  <div class="basvuru-content">
+    <div class="basvuru-container">
+
+      <!-- ALIM SÜRECİ -->
+      <section>
+        <h2 class="section-title">Program <span style="color: var(--gold);">Detayları</span></h2>
+        <p class="section-subtitle">Ride Along deneyiminiz dört temel adımda planlanır</p>
+
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-number">1</div>
+            <h3>Formu Gönder</h3>
+            <p>Katılım talebinizi ve iletişim bilgilerinizi form üzerinden eksiksiz olarak iletin.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">2</div>
+            <h3>Değerlendirme</h3>
+            <p>Başvurunuz ekip uygunluğu, tarih ve operasyon planına göre değerlendirilir.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">3</div>
+            <h3>Tarih Belirle</h3>
+            <p>Uygunluk onayından sonra görev ekibi sizinle iletişime geçerek program tarihini belirler.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">4</div>
+            <h3>Sahaya Katıl</h3>
+            <p>Belirlenen tarihte ekibimize katılın ve istasyon operasyonlarını güvenli biçimde gözlemleyin.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIDE ALONG FORMU -->
+      <section class="form-section">
+        <h2>Ride Along Formu</h2>
+        <p class="subtitle">Program katılım talebinizi göndermek için formu doldurunuz</p>
+
+        <div class="form-disclaimer">
+          <strong>⚠️ Bilgilendirme:</strong> Ride Along programı, LASD 28th Station FiveM rol yapma topluluğu içinde saha işleyişini gözlemlemek amacıyla düzenlenir. Kontenjan ve tarih onaya tabidir.
+        </div>
+
+        <div class="form-frame">
+          <iframe src="https://forms.gle/BVJpPqwvShP9hjsC7" width="640" height="1200" frameborder="0" marginheight="0" marginwidth="0">Yükleniyor…</iframe>
+        </div>
+
+        <button class="apply-button" onclick="window.open('https://forms.gle/BVJpPqwvShP9hjsC7', '_blank')">Ride Along Formunu Aç</button>
+
+
+      </section>
+
+     
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>© 2026 Los Angeles County Sheriff's Department. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  </main>
+
+  <script>
+    /* Hamburger toggle */
+    document.addEventListener('DOMContentLoaded', function () {
+      var btn = document.querySelector('.hamburger');
+      var menu = document.getElementById('nav-menu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function () {
+        var open = menu.classList.toggle('nav-open');
+        btn.setAttribute('aria-expanded', open);
+      });
+      document.addEventListener('click', function (e) {
+        if (!btn.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.remove('nav-open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          menu.classList.remove('nav-open');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
