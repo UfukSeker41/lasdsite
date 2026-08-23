@@ -58,6 +58,12 @@
     .brand-text .dept { font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 700; color: var(--white); letter-spacing: 0.06em; text-transform: uppercase; }
     .brand-text .station { font-size: 11px; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
     .nav-links { display: flex; gap: 2px; align-items: center; flex-wrap: nowrap; }
+    .nav-dropdown { position: relative; flex-shrink: 0; }
+    .nav-dropdown-toggle { border: 0; cursor: pointer; font-family: inherit; white-space: nowrap; }
+    .nav-dropdown-toggle span { margin-left: 5px; font-size: 11px; }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 8px); right: 0; min-width: 210px; padding: 6px; flex-direction: column; align-items: stretch; background: var(--navy); border: 1px solid rgba(224,145,0,.6); border-radius: 4px; box-shadow: 0 12px 24px rgba(0,0,0,.25); z-index: 1100; }
+    .nav-dropdown.is-open .nav-dropdown-menu { display: flex; }
+    .nav-dropdown-menu a { display: block !important; width: 100%; white-space: nowrap; }
     .nav-links a {
       padding: 7px 12px;
       font-size: 12px;

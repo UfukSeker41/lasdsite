@@ -94,6 +94,16 @@
     text-align: center;
     padding: 13px 16px !important;
   }
+  .nav-dropdown { width: 100%; }
+  .nav-dropdown-menu {
+    position: static;
+    min-width: 0;
+    padding: 0 0 0 12px;
+    border: 0;
+    box-shadow: none;
+  }
+  .nav-dropdown.is-open .nav-dropdown-menu { display: flex; }
+  .nav-dropdown-menu a { text-align: left; }
   .nav-social {
     border-left: none;
     padding-left: 0;
